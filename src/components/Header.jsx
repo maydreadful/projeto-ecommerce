@@ -16,17 +16,6 @@ const Header = () => {
       .catch(err => console.error("Erro no fetch:", err));
   }, []);
 
-  return (
-    <>
-      <Banner 
-        title="IMPRESSÕES 3D PARA PAIXÕES TECNOLÓGICAS"
-        description="Modelos exclusivos e detalhados para sua coleção."
-        buttonText="Confira Agora"
-        image="/assets/dragon-hero.png" 
-      />
-      <ProductCarousel products={products} />
-    </>
-  );
 };
 
 export default Header;

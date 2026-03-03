@@ -25,28 +25,6 @@ const App = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#121212] text-white font-sans">
-      <Header />
-      
-      <main>
-        <Banner 
-          title="IMPRESSÕES 3D PARA PAIXÕES TECNOLÓGICAS"
-          description="Modelos exclusivos e detalhados para sua coleção geek e tech."
-          buttonText="Confira Agora"
-          image="/assets/dragon-hero.png" 
-        />
-
-        {loading ? (
-          <div className="flex justify-center py-20">
-            <p className="text-purple-500 animate-pulse text-xl">Carregando miniaturas...</p>
-          </div>
-        ) : (
-          <ProductCarousel products={products} />
-        )}
-      </main>
-
-      <Footer />
-    </div>
   );
 };
 
