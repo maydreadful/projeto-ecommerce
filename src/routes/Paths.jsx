@@ -6,8 +6,7 @@ import ForgotPassword from "../pages/ForgotPassword";
 import PageLayout from "../layouts/PageLayout";
 import AuthLayout from "../layouts/AuthLayout";
 import PageProduct from "../pages/PageProduct";
-import OrdersPage from "../pages/Orders";
-import ResetPassword from "../pages/ResetPassword";
+import Usuario from "../pages/Usuario";
 
 const Paths = () => {
     return (
@@ -15,8 +14,8 @@ const Paths = () => {
             <Routes>
                 <Route path="/" element={<PageLayout />}>
                     <Route index element={<Home />} />
-                    <Route path="orders" element={<OrdersPage />} />
-                    <Route path="/checkout" element={<Checkout />} />
+                    <Route path="/product" element={<PageProduct />} />
+                    <Route path="/usuario/:name" element={<Usuario />} />
                 </Route>
 
                 
@@ -24,8 +23,6 @@ const Paths = () => {
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/forgot-password" element={<ForgotPassword />} />
-                    <Route path="/product/:slug" element={<PageProduct />} />
-                    <Route path="/reset-password" element={<ResetPassword />} />
                 </Route>
                 <Route path="/dashboard" element={''}>
                 </Route>
