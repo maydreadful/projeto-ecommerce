@@ -1,8 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
-import Banner from './components/Banner';
-import ProductCarousel from './components/ProductCarousel';
-import Footer from './components/Footer';
 
 const App = () => {
   const [products, setProducts] = useState([]);
