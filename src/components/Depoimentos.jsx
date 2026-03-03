@@ -24,12 +24,12 @@ const Depoimentos = () => {
   ];
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section className="py-20 bg-slate-700 relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         
         <div className="flex items-center gap-4 mb-12 justify-center">
-          <div className="h-[1px] w-12 bg-slate-300"></div>
-          <h2 className="text-3xl font-black text-slate-900 tracking-tighter uppercase italic">
+          <div className="h-[1px] w-12 bg-slate-100"></div>
+          <h2 className="text-3xl font-black text-slate-100 tracking-tighter uppercase italic">
             Feedback dos Clientes
           </h2>
           <div className="h-[1px] w-12 bg-slate-300"></div>
