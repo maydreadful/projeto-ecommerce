@@ -9,7 +9,6 @@ import PageProduct from "../pages/PageProduct";
 import OrdersPage from "../pages/Orders";
 import ResetPassword from "../pages/ResetPassword";
 import Checkout from "../pages/Checkout";
-import Dashboard from "../pages/Dashboard";
 import Usuario from "../pages/Usuario";
 
 const Paths = () => {
