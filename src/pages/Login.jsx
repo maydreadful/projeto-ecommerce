@@ -14,6 +14,7 @@ export default function Login() {
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
+    // const [user, setUser] = useState()
 
     function handleChange(e) {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -25,15 +26,8 @@ export default function Login() {
 
         try {
             setLoading(true);
-            const data = await login(form.email, form.senha)
-
-            if (data.user.nivel === "adm") {
-                navigate("/dashboard");
-                
-            } else {
-                navigate("/");
-            }
-
+            await login(form.email, form.senha)
+            navigate('/')
         } catch (err) {
             setError(
                 err.response?.data?.message ||

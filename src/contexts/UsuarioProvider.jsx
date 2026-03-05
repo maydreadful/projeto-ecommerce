@@ -58,6 +58,8 @@ export function UserProvider({ children }) {
     // 🔹 Registro (agora usando sessionStorage também)
     const register = async (nome, email, cpf, telefone, genero, data_nasc, senha) => {
         try {
+            console.log(cpf, telefone);
+            
             const { data } = await AXIOS.post("/api/users", {
                 nome,
                 email,
@@ -67,7 +69,7 @@ export function UserProvider({ children }) {
                 data_nasc,
                 senha,
             });
-
+            
             if (data.user && data.token) {
                 setUser(data.user);
                 setToken(data.token);
