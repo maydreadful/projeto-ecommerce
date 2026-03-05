@@ -1,9 +1,12 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { AXIOS } from "../services";
+import { useNavigate } from "react-router";
+
 
 const UserContext = createContext();
 
 export function UserProvider({ children }) {
+
 
     // 🔹 Inicializa user corretamente do sessionStorage
     const [user, setUser] = useState(() => {
@@ -43,9 +46,9 @@ export function UserProvider({ children }) {
             if (data.usuario && data.token) {
                 setUser(data.usuario);
                 setToken(data.token);
-
-                sessionStorage.setItem("user", JSON.stringify(data.usuario));
+                sessionStorage.setItem("user", JSON.stringify(data.user));
                 sessionStorage.setItem("token", data.token);
+
             }
 
             return data;
