@@ -1,5 +1,5 @@
-import { aside } from "framer-motion/client";
-import { NavLink } from "react-router-dom";
+// import { aside } from "framer-motion/client";
+import { NavLink } from "react-router";
 
 export default function Sidebar() {
     return (
