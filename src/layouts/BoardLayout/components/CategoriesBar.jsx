@@ -1,7 +1,8 @@
 import { FaTimes } from "react-icons/fa";
-import { AXIOS } from "../services";
+import { AXIOS } from "../../../services";
 import { useState } from "react";
-import { useCart } from "../contexts/CartProvider";
+import { useCart } from "../../../contexts/CartProvider";
+
 
 const CategoriesBar = () => {
 

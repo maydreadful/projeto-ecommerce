@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FaLayerGroup, FaPlus, FaTag } from "react-icons/fa";
 import { AXIOS } from "../../../services";
 import { useCart } from "../../../contexts/CartProvider";
+import { Link } from "react-router";
 
 const PageCategories = () => {
     const { openCatego, openEditCatego, setIdCatego } = useCart()
@@ -143,21 +144,21 @@ const PageCategories = () => {
 
             {/* LINKS RÁPIDOS */}
             <article className="grid grid-cols-1 gap-3 rounded-2xl bg-[var(--bgCard)] p-4 shadow-lg ring-1 ring-white/5 sm:grid-cols-2">
-                <a
-                    href="/admin/products"
+                <Link
+                    to="/admin/products"
                     className="flex items-center justify-between rounded-xl border border-white/10 px-3 py-3 transition hover:border-[var(--bgButton)] hover:bg-white/5"
                 >
                     Gerenciar produtos
                     <FaLayerGroup className="text-[var(--bgButton)]" />
-                </a>
+                </Link>
 
-                <a
-                    href="/admin/banners"
+                <Link
+                    to="/admin/banners"
                     className="flex items-center justify-between rounded-xl border border-white/10 px-3 py-3 transition hover:border-[var(--bgButton)] hover:bg-white/5"
                 >
                     Atualizar banners por categoria
                     <FaTag className="text-[var(--bgButton)]" />
-                </a>
+                </Link>
             </article>
 
         </section>

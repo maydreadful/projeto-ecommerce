@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router";
-import UserSideBar from "../components/UserSideBar";
-import ProductSideBar from "../components/ProductSideBar";
-import ProductPutBar from "../components/ProductPutBar";
-import CategoriesBar from "../components/CategoriesBar";
-import CategoriesEditBar from "../components/CategoriesEditBar";
-import CouponsBar from "../components/CuponsBar";
-import AdminSidebar from "../components/SideBarBoard";
-import HeaderBoard from "../components/HeaderBoard";
+import UserSideBar from "../BoardLayout/components/UserSideBar";
+import ProductSideBar from "../BoardLayout/components/ProductSideBar";
+import ProductPutBar from "../BoardLayout/components/ProductPutBar";
+import CategoriesBar from "../BoardLayout/components/CategoriesBar";
+import CategoriesEditBar from "../BoardLayout/components/CategoriesEditBar";
+import CouponsBar from "../BoardLayout/components/CuponsBar";
+import AdminSidebar from "../BoardLayout/components/SideBarBoard";
+import HeaderBoard from "../BoardLayout/components/HeaderBoard";
 import { Title } from "react-head";
 import { jwtDecode } from "jwt-decode";
 

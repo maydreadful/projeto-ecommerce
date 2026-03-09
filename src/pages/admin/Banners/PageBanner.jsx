@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaEye, FaImage, FaLink, FaPlus, FaToggleOn } from "react-icons/fa";
 import { AXIOS } from "../../../services";
+import { Link } from "react-router";
 
 const summary = [
     { id: "ativos", label: "Banners ativos", value: "12", icon: FaImage },
@@ -16,7 +17,7 @@ const summary = [
 
 const PageBanner = () => {
 
-      const [banners, setBanners] = useState()
+      const [banners, setBanners] = useState([])
 
       useEffect(() => {
         async function buscarBanners() {
@@ -73,7 +74,7 @@ const PageBanner = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {banners.map((banner) => (
+                            {banners.length > 0 && banners.map((banner) => (
                                 <tr key={banner.id} className="border-b border-white/5 last:border-b-0">
                                     <td className="px-2 py-3 font-medium">{banner.name}</td>
                                     <td className="px-2 py-3 text-[var(--textColor)]">{banner.position}</td>
@@ -98,14 +99,14 @@ const PageBanner = () => {
             <article className="rounded-2xl bg-[var(--bgCard)] p-4 shadow-lg ring-1 ring-white/5">
                 <h2 className="mb-3 text-lg font-semibold">Links rapidos</h2>
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                    <a href="/admin/products" className="flex items-center justify-between rounded-xl border border-white/10 px-3 py-3 transition hover:border-[var(--bgButton)] hover:bg-white/5">
+                    <Link to="/admin/products" className="flex items-center justify-between rounded-xl border border-white/10 px-3 py-3 transition hover:border-[var(--bgButton)] hover:bg-white/5">
                         Produtos vinculados
                         <FaLink className="text-[var(--bgButton)]" />
-                    </a>
-                    <a href="/admin/coupons" className="flex items-center justify-between rounded-xl border border-white/10 px-3 py-3 transition hover:border-[var(--bgButton)] hover:bg-white/5">
+                    </Link>
+                    <Link to="/admin/coupons" className="flex items-center justify-between rounded-xl border border-white/10 px-3 py-3 transition hover:border-[var(--bgButton)] hover:bg-white/5">
                         Campanhas com cupom
                         <FaLink className="text-[var(--bgButton)]" />
-                    </a>
+                    </Link>
                 </div>
             </article>
         </section>

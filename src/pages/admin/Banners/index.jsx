@@ -1,3 +1,4 @@
+import { Title } from "react-head";
 import PageBanner from "./PageBanner";
 
 

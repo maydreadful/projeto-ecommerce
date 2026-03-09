@@ -1,5 +1,5 @@
 import { FaUser } from "react-icons/fa";
-import { useUser } from "../contexts/UsuarioProvider";
+import { useUser } from "../../../contexts/UsuarioProvider";
 
 const HeaderBoard = () => {
     const { user } = useUser()

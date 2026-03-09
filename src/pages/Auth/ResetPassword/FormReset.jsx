@@ -24,7 +24,7 @@ const FormReset = () => {
         }
         try {
             setLoading(true);
-            await AXIOS.post("/reset-password", {
+            await AXIOS.post("/api/auth/reset-password", {
                 token,
                 senha,
             });

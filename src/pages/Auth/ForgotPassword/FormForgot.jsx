@@ -14,7 +14,7 @@ const FormForgot = () => {
 
         try {
             setLoading(true);
-            await AXIOS.post("/forgot-password", { email });
+            await AXIOS.post("/api/auth/forgot-password", { email });
             setSuccess("Email de recuperação enviado com sucesso!");
         } catch (err) {
             setError(err.response?.data?.message || "Erro ao enviar email de recuperação. Tente novamente.");

@@ -1,13 +1,15 @@
-import { NavLink, useNavigate } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import {
     FaChartPie,
     FaImage,
     FaTicketAlt,
     FaUsers,
     FaTags,
-    FaBoxOpen
+    FaBoxOpen,
+    FaJediOrder
 } from "react-icons/fa";
-import { useUser } from "../contexts/UsuarioProvider";
+import { useUser } from "../../../contexts/UsuarioProvider";
+
 
 const menuItems = [
     { path: "/admin", label: "Dashboard", icon: FaChartPie, end: true },
@@ -16,6 +18,7 @@ const menuItems = [
     { path: "/admin/users", label: "Usuários", icon: FaUsers },
     { path: "/admin/categories", label: "Categorias", icon: FaTags },
     { path: "/admin/products", label: "Produtos", icon: FaBoxOpen },
+    { path: "/admin/orders", label: "Pedidos", icon: FaJediOrder },
 ];
 
 const AdminSidebar = () => {
@@ -23,12 +26,12 @@ const AdminSidebar = () => {
     const navigate = useNavigate()
     return (
         <aside className="w-64 min-h-screen bg-slate-900 text-white flex flex-col">
-            <div className="p-6 border-b border-slate-700 flex justify-center">
+            <Link to={'/'} className="p-6 border-b border-slate-700 flex justify-center">
                 <img
                     src="/logo-icon-name.svg"
                     alt="Logo"
                     className="h-10 object-contain" />
-            </div>
+            </Link>
             {/* Menu */}
             <nav className="flex-1 px-4 py-6 space-y-2">
                 {menuItems.map((item, index) => {

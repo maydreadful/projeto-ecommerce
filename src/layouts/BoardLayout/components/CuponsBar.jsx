@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
-import { useCart } from "../contexts/CartProvider";
-import { AXIOS } from "../services";
+import { AXIOS } from "../../../services";
+import { useCart } from "../../../contexts/CartProvider";
 
 const CouponsBar = () => {
 
@@ -30,12 +30,18 @@ const CouponsBar = () => {
         try {
             setLoading(true);
 
-            const response = await AXIOS.post('/api/coupons', {
+            const response = await AXIOS.post('/api/coupons',{
                 nome: form.nome,
                 quantidade: Number(form.quantidade),
                 validade: form.validade,
                 valor_desc: Number(form.valor_desc)
-            });
+            },
+            {
+                headers: {
+                    Authorization: `Bearer ${sessionStorage.getItem("token")}`
+                }
+            }
+        );
             console.log(response.data)
             setSuccess("Cupom criado com sucesso!");
             setForm({

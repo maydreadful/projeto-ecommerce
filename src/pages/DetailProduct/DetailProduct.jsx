@@ -1,12 +1,12 @@
 import { useState, useMemo, useEffect } from "react";
 import { FaStar, FaRegStar, FaTruck, FaShoppingCart, FaBoxOpen } from "react-icons/fa";
-import { useCart } from "../contexts/CartProvider";
+import { useCart } from "../../contexts/CartProvider";
 import { useNavigate, useParams } from "react-router";
-import { AXIOS } from "../services";
-import { useUser } from "../contexts/UsuarioProvider";
-import { Title } from "react-head";
+import { AXIOS } from "../../services";
+import { useUser } from "../../contexts/UsuarioProvider";
+import PageDatailProduct from ".";
 
-export default function PageProduct() {
+const DetailProduct = () => {
     const { id } = useParams();
     const { addToCart } = useCart();
     const { user } = useUser()
@@ -15,6 +15,7 @@ export default function PageProduct() {
     const [produto, setProduto] = useState(null);
     const [imagemAtiva, setImagemAtiva] = useState(0);
     const [quantidade, setQuantidade] = useState(1);
+    console.log(quantidade)
     // const [cep, setCep] = useState("");
     // const [fretes, setFretes] = useState([]);
     // const [loadingFrete, setLoadingFrete] = useState(false);
@@ -41,6 +42,7 @@ export default function PageProduct() {
                     const cores = JSON.parse(data.cores);
                     setCorSelecionada(cores[0]);
                 }
+                // return <PageDatailProduct nome={data.nome} />
 
             } catch (error) {
                 console.log(error);
@@ -97,11 +99,9 @@ export default function PageProduct() {
     const imagens = produto.produto_imagens || [];
     const tamanhos = produto.tamanhos ? JSON.parse(produto.tamanhos) : [];
     const cores = produto.cores ? JSON.parse(produto.cores) : [];
-
     return (
         <main className="min-h-screen bg-gray-50">
-            <Title>3Dtech - {produto.nome}</Title>
-            {/* Breadcrumb */}
+
             <div className="max-w-7xl mx-auto px-6 py-4 text-sm text-gray-500">
                 Home / {produto.categoria?.nome} /{" "}
                 <span className="text-black">{produto.nome}</span>
@@ -291,11 +291,10 @@ export default function PageProduct() {
 
                                 if (user) {
                                     addToCart({
-                                        ...produto,
-                                        quantidade,
+                                        ...produto,  
                                         tamanhoSelecionado,
                                         corSelecionada
-                                    })
+                                    },quantidade)
                                     return
                                 }
 
@@ -320,10 +319,9 @@ export default function PageProduct() {
                                 if (user) {
                                     addToCart({
                                         ...produto,
-                                        quantidade,
                                         tamanhoSelecionado,
                                         corSelecionada
-                                    })
+                                    }, quantidade)
                                     navigate('/checkout')
                                     return
                                 }
@@ -373,3 +371,5 @@ export default function PageProduct() {
         </main>
     );
 }
+
+export default DetailProduct;

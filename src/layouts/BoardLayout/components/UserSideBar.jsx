@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
-import { useUser } from "../contexts/UsuarioProvider";
-import { maskCPF, maskPhone } from "../utils";
+
+import { maskCPF, maskPhone } from "../../../utils";
+import { useUser } from "../../../contexts/UsuarioProvider";
 
 
 const UserSideBar = () => {

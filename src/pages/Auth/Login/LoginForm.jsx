@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useUser } from "../../../contexts/UsuarioProvider";
 import { useNavigate } from "react-router";
+import { jwtDecode } from "jwt-decode";
 
 const LoginForm = () => {
 
@@ -27,7 +28,7 @@ const LoginForm = () => {
             setLoading(true);
             const data = await login(form.email, form.senha)
 
-            if (data?.usuario?.nivel === 'admin') {
+            if (jwtDecode(data.token)?.nivel === 'admin') {
                 navigate('/admin')
             } else {
                 navigate('/')
