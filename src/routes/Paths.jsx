@@ -24,6 +24,10 @@ import PageCheckOut from "../pages/CheckOut";
 import Teste from "../pages/Teste";
 import Orders from "../pages/Orders";
 import Usuario from "../pages/Usuario";
+import ProjectsPersonali from "../pages/ProjectsPersonali";
+import Filamentos from "../pages/Filamentos";
+import Blog from "../pages/Blog";
+import OrderTracking from "../pages/OrderTracking";
 
 
 const Paths = () => {
@@ -45,10 +49,10 @@ const Paths = () => {
           <Route path="forgot-password" element={<ForgotPassword />} />
           <Route path="reset-password" element={<ResetPassword />} />
           <Route path="about-us" element={<AboutUs />} />
-          {/* <Route path="blog" element={<Blog />} />
+          <Route path="blog" element={<Blog />} />
           <Route path="order-tracking" element={<OrderTracking />} />
           <Route path="projects" element={<ProjectsPersonali />} />
-          <Route path="/filamentos-3d" element={<Filamentos />} />  */}
+          <Route path="/filamentos-3d" element={<Filamentos />} /> 
         </Route>
 
         <Route path="/admin" element={<BoardLayout />}>
